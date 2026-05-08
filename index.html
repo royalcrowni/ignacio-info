@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ignacio.info</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      width: 100%;
+    }
+
+    body {
+      background-color: #F4F2EE;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .label {
+      font-size: 11.5px;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      color: #131313;
+      user-select: none;
+    }
+
+    .label span {
+      display: inline-block;
+      transition: color 0.6s ease;
+    }
+  </style>
+</head>
+<body>
+  <p class="label" id="text"></p>
+
+  <script>
+    const colors = ['#3047B6', '#4766B4', '#898DD1', '#131313'];
+    const fullText = 'Work in progress';
+    const progressWord = 'progress';
+    const container = document.getElementById('text');
+
+    // Build spans, mark "progress" chars
+    let progressSpans = [];
+    let inProgress = false;
+    let progressStart = fullText.indexOf(progressWord);
+
+    fullText.split('').forEach((char, i) => {
+      const span = document.createElement('span');
+      span.textContent = char === ' ' ? '\u00A0' : char;
+      if (i >= progressStart && i < progressStart + progressWord.length) {
+        progressSpans.push(span);
+      }
+      container.appendChild(span);
+    });
+
+    const delay = 70;
+
+    function animateColor(colorIndex) {
+      const color = colors[colorIndex % colors.length];
+
+      progressSpans.forEach((span, i) => {
+        setTimeout(() => {
+          span.style.color = color;
+        }, i * delay);
+      });
+
+      const totalDuration = progressSpans.length * delay + 700;
+      setTimeout(() => animateColor(colorIndex + 1), totalDuration);
+    }
+
+    setTimeout(() => animateColor(0), 2000);
+  </script>
+</body>
+</html>
