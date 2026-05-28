@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" data-lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The AI-Powered Airline | Ignacio Manzano</title>
+  <meta name="description" content="When politics gets interesting.">
+
+  <!-- Favicons -->
+  <link rel="icon" href="/assets/icons/favicon.ico" sizes="any">
+  <link rel="icon" href="/assets/icons/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/assets/icons/favicon-180.png">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="The AI-Powered Airline | Ignacio Manzano">
+  <meta property="og:description" content="When politics gets interesting.">
+  <meta property="og:image" content="/assets/img/posts/og-the-ai-powered-airline.jpg">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://ignacio.info/wlog/the-ai-powered-airline">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The AI-Powered Airline | Ignacio Manzano">
+  <meta name="twitter:image" content="/assets/img/posts/og-the-ai-powered-airline.jpg">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/css/design-system.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/article.css">
+
+  <!-- Apply theme + lang before first paint — prevents flash -->
+  <script>
+    (function(){
+      var s = localStorage.getItem('ignacio-info-theme');
+      var t = s==='dark'||s==='light' ? s : (window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
+      document.documentElement.setAttribute('data-theme', t);
+      var l = localStorage.getItem('ignacio-info-lang');
+      if (l === 'es') {
+        document.documentElement.setAttribute('data-lang', 'es');
+        document.documentElement.lang = 'es';
+      }
+    })();
+  </script>
+  <script src="/assets/js/theme-toggle.js" defer></script>
+</head>
+<body>
+
+  <header class="site-header header--cv">
+    <a href="/" class="site-header-name">Ignacio Manzano</a>
+    <nav class="site-header-nav" aria-label="Main navigation">
+      <a href="/wlog" class="site-nav-link site-nav-link--active">I&#8217;m Writing</a>
+      <a href="/cv"   class="site-nav-link">Life Journey</a>
+    </nav>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Switch to dark mode">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true">
+        <path d="M16,16a4,4,0,0,1,0-8Z" transform="translate(-6 -2)" fill="currentColor"/>
+        <path d="M12,2A10,10,0,1,1,2,12,10,10,0,0,1,12,2Zm0,2V8a4,4,0,0,1,0,8v4A8,8,0,0,1,12,4Z" transform="translate(-2 -2)" fill="currentColor" fill-rule="evenodd"/>
+      </svg>
+    </button>
+  </header>
+
+  <main>
+
+    <!-- Language switcher -->
+    <div class="article-lang-switcher">
+      <div class="article-lang-switcher-inner" id="lang-toggle">
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="es">ES</button>
+      </div>
+    </div>
+
+    <!-- ═══ ENGLISH header ═══ -->
+    <div class="article-lang article-lang--en">
+      <div class="article-main">
+        <header class="article-header">
+          <div class="article-kicker">
+            <span class="article-category">Article</span>
+            <span class="article-date">June 01, 2026</span>
+          </div>
+          <h1 class="article-title">The AI-Powered Airline</h1>
+          <p class="article-tagline">Coming Soon.</p>
+          <p class="article-author">By Ignacio Manzano</p>
+        </header>
+      </div>
+    </div>
+
+    <!-- ═══ ESPAÑOL header ═══ -->
+    <div class="article-lang article-lang--es">
+      <div class="article-main">
+        <header class="article-header">
+          <div class="article-kicker">
+            <span class="article-category">Artículo</span>
+            <span class="article-date">01 de Junio, 2026</span>
+          </div>
+          <h1 class="article-title">La aerolínea impulsada por IA</h1>
+          <p class="article-tagline">Próximamente.</p>
+          <p class="article-author">Por Ignacio Manzano</p>
+        </header>
+      </div>
+    </div>
+
+    <!-- Hero image — shared -->
+    <figure class="article-hero-wrap">
+      <img
+        src="/assets/img/posts/the-ai-powered-airline.webp"
+        alt="The AI-Powered Airline"
+        class="article-hero"
+      >
+    </figure>
+
+    <!-- ═══ ENGLISH body ═══ -->
+    <div class="article-lang article-lang--en">
+      <div class="article-main">
+        <div class="article-body">
+          <p class="article-closing">This article will be published on June 1, 2026.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ ESPAÑOL body ═══ -->
+    <div class="article-lang article-lang--es">
+      <div class="article-main">
+        <div class="article-body">
+          <p class="article-closing">Este artículo se publicará el 1 de Junio de 2026.</p>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="article-footer">
+    <a href="/wlog" class="article-footer-back">Go back to I&#8217;m Writing</a>
+  </footer>
+
+  <script>
+    /* ── Toggle rotation ── */
+    (function () {
+      var btn = document.getElementById('theme-toggle');
+      if (btn) {
+        btn.addEventListener('click', function () {
+          btn.classList.toggle('is-rotated');
+        });
+      }
+    })();
+
+    /* ── Language toggle ── */
+    (function () {
+      var toggle = document.getElementById('lang-toggle');
+      if (!toggle) return;
+
+      var opts = toggle.querySelectorAll('.lang-btn');
+
+      function setLang(lang) {
+        document.documentElement.setAttribute('data-lang', lang);
+        document.documentElement.lang = lang;
+        localStorage.setItem('ignacio-info-lang', lang);
+        opts.forEach(function (opt) {
+          opt.classList.toggle('is-active', opt.dataset.lang === lang);
+        });
+      }
+
+      setLang(localStorage.getItem('ignacio-info-lang') || 'en');
+
+      opts.forEach(function (opt) {
+        opt.addEventListener('click', function () {
+          setLang(opt.dataset.lang);
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>

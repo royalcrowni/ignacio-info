@@ -1,83 +1,176 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ignacio.info</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ignacio Manzano</title>
+  <meta name="description" content="Exploring the intersection of AI, strategy, and institutions.">
 
-    html, body {
-      height: 100%;
-      width: 100%;
-    }
+  <!-- Favicons -->
+  <link rel="icon" href="/assets/icons/favicon.ico" sizes="any">
+  <link rel="icon" href="/assets/icons/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/assets/icons/favicon-180.png">
 
-    body {
-      background-color: #F4F2EE;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Inter', sans-serif;
-    }
+  <!-- Open Graph -->
+  <meta property="og:title" content="Ignacio Manzano">
+  <meta property="og:description" content="Exploring the intersection of AI, strategy, and institutions.">
+  <meta property="og:image" content="/assets/img/og-default.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ignacio.info">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ignacio Manzano">
+  <meta name="twitter:image" content="/assets/img/og-default.jpg">
 
-    .label {
-      font-size: 11.5px;
-      font-weight: 400;
-      letter-spacing: -0.02em;
-      color: #131313;
-      user-select: none;
-    }
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/css/design-system.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/index.css">
 
-    .label span {
-      display: inline-block;
-      transition: color 0.6s ease;
-    }
-  </style>
+  <!-- Apply theme before first paint — prevents flash -->
+  <script>
+    (function(){
+      var s=localStorage.getItem('ignacio-info-theme');
+      var t=s==='dark'||s==='light'?s:(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
+      document.documentElement.setAttribute('data-theme',t);
+    })();
+  </script>
+  <script src="/assets/js/theme-toggle.js" defer></script>
 </head>
 <body>
-  <p class="label" id="text"></p>
+
+  <!-- Site header — minimal on home (only toggle visible) -->
+  <header class="site-header header--minimal">
+    <a href="/" class="site-header-name">Ignacio Manzano</a>
+    <nav class="site-header-nav" aria-label="Main navigation">
+      <a href="/wlog" class="site-nav-link">I'm Writing</a>
+      <a href="/cv"   class="site-nav-link">Life Journey</a>
+    </nav>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Switch to dark mode">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true">
+        <path d="M16,16a4,4,0,0,1,0-8Z" transform="translate(-6 -2)" fill="currentColor"/>
+        <path d="M12,2A10,10,0,1,1,2,12,10,10,0,0,1,12,2Zm0,2V8a4,4,0,0,1,0,8v4A8,8,0,0,1,12,4Z" transform="translate(-2 -2)" fill="currentColor" fill-rule="evenodd"/>
+      </svg>
+    </button>
+  </header>
+
+  <main class="page-main">
+    <article class="home-content">
+
+      <!-- Name -->
+      <h1 class="home-title">Ignacio Manzano</h1>
+
+      <!-- Location + clock -->
+      <div class="home-meta">
+        <span class="home-location">Currently in Madrid</span>
+        <span class="home-clock-wrap">
+          <img id="time-icon" class="time-icon" src="/assets/svg/time-day.svg" alt="" aria-hidden="true" width="16" height="16">
+          <time id="madrid-clock" class="home-clock" datetime=""></time>
+        </span>
+      </div>
+      <p class="home-origin"><em>Past in Puerto Rico &amp; USA</em></p>
+
+      <!-- Bio paragraphs -->
+      <div class="home-bio">
+        <p>Exploring the intersection of AI, strategy, and institutions. I build things at <a href="https://manzano.cc" target="_blank" rel="noopener noreferrer" class="link-mono" style="font-family:'JetBrains Mono',monospace;font-weight:700;font-style:italic;color:#6E6961;text-decoration:underline;text-underline-offset:3px;">manzano.cc</a>, a space where I apply AI to real business challenges and create tools to test what AI can actually do.</p>
+
+        <p>I question what AI means for people and institutions at <a href="https://aigea.org" target="_blank" rel="noopener noreferrer" class="link-aigea" style="font-family:'JetBrains Mono',monospace;font-weight:700;font-style:italic;color:#6E6961;text-decoration:underline;text-underline-offset:3px;">aigea.org</a></p>
+
+        <p>Currently completing a Master in AI for Business Management. Certified in AI Ethics &amp; Regulatory Audit and AI Project Management &amp; Adoption.</p>
+
+        <p>Occasionally I put my thinking on paper, grounded in research, open to being wrong: <a href="/wlog" class="link-bio">I'm Writing</a>.</p>
+
+        <p>To know more about my background, here's my <a href="/cv" class="link-bio">Life Journey</a>.</p>
+      </div>
+
+      <nav class="home-social" aria-label="Social links">
+        <a href="https://linkedin.com/in/ignacio-manzano" target="_blank" rel="noopener noreferrer" class="social-link">LinkedIn</a>
+        <a href="mailto:ignacio@manzano.cc" class="social-link">Email</a>
+      </nav>
+
+    </article>
+  </main>
 
   <script>
-    const colors = ['#3047B6', '#4766B4', '#898DD1', '#131313'];
-    const fullText = 'Work in progress';
-    const progressWord = 'progress';
-    const container = document.getElementById('text');
+    /* ── Madrid clock + time icon ── */
+    (function () {
+      var clockEl = document.getElementById('madrid-clock');
+      var iconEl  = document.getElementById('time-icon');
 
-    // Build spans, mark "progress" chars
-    let progressSpans = [];
-    let inProgress = false;
-    let progressStart = fullText.indexOf(progressWord);
+      var SVG_MAP = {
+        dawn:  '/assets/svg/time-dawn.svg',
+        day:   '/assets/svg/time-day.svg',
+        dusk:  '/assets/svg/time-dusk.svg',
+        night: '/assets/svg/time-night.svg'
+      };
 
-    fullText.split('').forEach((char, i) => {
-      const span = document.createElement('span');
-      span.textContent = char === ' ' ? '\u00A0' : char;
-      if (i >= progressStart && i < progressStart + progressWord.length) {
-        progressSpans.push(span);
+      function getSvgKey(h) {
+        if (h >= 7  && h < 9)  return 'dawn';
+        if (h >= 9  && h < 19) return 'day';
+        if (h >= 19 && h < 22) return 'dusk';
+        return 'night';
       }
-      container.appendChild(span);
-    });
 
-    const delay = 70;
+      var lastKey = null;
 
-    function animateColor(colorIndex) {
-      const color = colors[colorIndex % colors.length];
+      function tick() {
+        var now = new Date();
+        var madridStr = now.toLocaleString('en-US', {
+          timeZone: 'Europe/Madrid',
+          hour:     'numeric',
+          minute:   '2-digit',
+          hour12:   true
+        });
+        /* Compact: "9:55 AM" → "09:55AM" */
+        var parts = madridStr.match(/(\d+):(\d+)\s*(AM|PM)/i);
+        if (parts) {
+          var h12 = parts[1].padStart(2, '0');
+          var formatted = h12 + ':' + parts[2] + parts[3].toUpperCase();
+          clockEl.textContent = formatted;
+          clockEl.setAttribute('datetime', now.toISOString());
+        }
 
-      progressSpans.forEach((span, i) => {
-        setTimeout(() => {
-          span.style.color = color;
-        }, i * delay);
+        /* Hour in Madrid (24h) for icon selection */
+        var madridHour = parseInt(
+          now.toLocaleString('en-US', { timeZone: 'Europe/Madrid', hour: 'numeric', hour12: false }),
+          10
+        ) % 24;
+        var key = getSvgKey(madridHour);
+        if (key !== lastKey) {
+          iconEl.src = SVG_MAP[key];
+          lastKey = key;
+        }
+      }
+
+      tick();
+      setInterval(tick, 1000);
+    })();
+
+    /* ── Toggle rotation ── */
+    (function () {
+      var btn = document.getElementById('theme-toggle');
+      if (btn) {
+        btn.addEventListener('click', function () {
+          btn.classList.toggle('is-rotated');
+        });
+      }
+    })();
+
+    /* ── Letter-wave: wrap each char in a span with staggered delay ── */
+    (function () {
+      var DELAY = 70; /* ms between letters */
+      document.querySelectorAll('.link-bio').forEach(function (link) {
+        var chars = link.textContent.split('');
+        var N = chars.length;
+        link.innerHTML = chars.map(function (ch, i) {
+          /* Delay formula: (i - N + 1) * DELAY → negative values so wave
+             is already running at page load, crest moves left → right */
+          var delay = (i - N + 1) * DELAY;
+          var safe  = ch === ' ' ? '&nbsp;' : ch.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+          return '<span style="animation-delay:' + delay + 'ms">' + safe + '</span>';
+        }).join('');
       });
-
-      const totalDuration = progressSpans.length * delay + 700;
-      setTimeout(() => animateColor(colorIndex + 1), totalDuration);
-    }
-
-    setTimeout(() => animateColor(0), 2000);
+    })();
   </script>
+
 </body>
 </html>

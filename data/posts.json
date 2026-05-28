@@ -1,0 +1,79 @@
+[
+  {
+    "slug": "the-ai-powered-airline",
+    "title": "The AI-Powered Airline",
+    "category": "Article",
+    "date": "05.2026",
+    "image": "the-ai-powered-airline.webp"
+  },
+  {
+    "slug": "marketing-has-an-issue",
+    "title": "Marketing Has An Issue",
+    "category": "Opinion",
+    "date": "04.2026",
+    "image": "marketing-has-an-issue.webp"
+  },
+  {
+    "slug": "the-marketing-side-of-ai",
+    "title": "The Marketing Side of AI",
+    "category": "Article",
+    "date": "04.2026",
+    "image": "the-marketing-side-of-ai.webp"
+  },
+  {
+    "slug": "sundays-without-ai",
+    "title": "Sundays Without AI",
+    "category": "Article",
+    "date": "03.2026",
+    "image": "sundays-without-ai.webp"
+  },
+  {
+    "slug": "the-ai-experts-epidemic",
+    "title": "The \"AI Experts\" Epidemic",
+    "category": "Opinion",
+    "date": "03.2026",
+    "image": "the-ai-experts-epidemic.webp"
+  },
+  {
+    "slug": "ainxiety-what-is-going-on",
+    "title": "AInxiety, What is Going on?",
+    "category": "Article",
+    "date": "03.2026",
+    "image": "ainxiety-what-is-going-on.webp"
+  },
+  {
+    "slug": "bernie-sanders-and-ai",
+    "title": "Bernie Sanders and AI",
+    "category": "Opinion",
+    "date": "03.2026",
+    "image": "bernie-sanders-and-ai.webp"
+  },
+  {
+    "slug": "the-spanish-accent-in-ai",
+    "title": "The Spanish Accent in AI",
+    "category": "Investigation",
+    "date": "02.2026",
+    "image": "the-spanish-accent-in-ai.webp"
+  },
+  {
+    "slug": "ai-to-ai-communication",
+    "title": "AI to AI Communication",
+    "category": "Opinion",
+    "date": "02.2026",
+    "image": "ai-to-ai-communication.webp"
+  },
+  {
+    "slug": "the-tokens-bubble",
+    "title": "The Tokens Bubble",
+    "category": "Investigation",
+    "date": "02.2026",
+    "image": "the-tokens-bubble.webp"
+  },
+  {
+    "slug": "who-decides-the-future-of-ai",
+    "title": "Who Decides the Future of AI?",
+    "category": "Opinion",
+    "date": "01.2026",
+    "image": "who-decides-the-future-of-ai.webp"
+  }
+]

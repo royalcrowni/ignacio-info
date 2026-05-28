@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 | Ignacio Manzano</title>
+  <meta name="description" content="Page not found.">
+
+  <!-- Favicons -->
+  <link rel="icon" href="/assets/icons/favicon.ico" sizes="any">
+  <link rel="icon" href="/assets/icons/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/assets/icons/favicon-180.png">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/css/design-system.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+
+  <style>
+    html, body { height: 100%; }
+
+    body {
+      display:        flex;
+      flex-direction: column;
+      min-height:     100svh;
+    }
+
+    .not-found-main {
+      flex:            1;
+      display:         flex;
+      flex-direction:  column;
+      align-items:     center;
+      justify-content: center;
+      padding:         var(--space-12) var(--space-6) var(--space-16);
+      gap:             var(--space-12);
+    }
+
+    .not-found-content {
+      width:     100%;
+      max-width: 490px;
+    }
+
+    .not-found-code {
+      font-family:    var(--font-mono);
+      font-size:      var(--text-sm);
+      font-weight:    var(--weight-semibold);
+      color:          var(--color-blue-primary);
+      letter-spacing: var(--tracking-widest);
+      margin-bottom:  var(--space-3);
+    }
+
+    .not-found-message {
+      font-size:     var(--text-xl);
+      font-weight:   var(--weight-regular);
+      color:         var(--color-title);
+      line-height:   var(--leading-snug);
+      margin-bottom: var(--space-8);
+    }
+
+    .not-found-back {
+      font-size: var(--text-sm);
+      color:     var(--color-text-secondary);
+    }
+
+    .not-found-back a {
+      color:                 var(--color-text-secondary);
+      text-decoration:       underline;
+      text-underline-offset: 3px;
+      transition:            color var(--transition-fast);
+    }
+
+    .not-found-back a:hover { color: var(--color-text); }
+
+    /* ── Game ── */
+    .game-section {
+      width:     100%;
+      max-width: 560px;
+    }
+
+    #game-canvas {
+      display:      block;
+      width:        100%;
+      aspect-ratio: 560 / 160;
+      cursor:       pointer;
+    }
+  </style>
+
+  <!-- Apply theme before first paint — prevents flash -->
+  <script>
+    (function(){
+      var s=localStorage.getItem('ignacio-info-theme');
+      var t=s==='dark'||s==='light'?s:(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
+      document.documentElement.setAttribute('data-theme',t);
+    })();
+  </script>
+  <script src="/assets/js/theme-toggle.js" defer></script>
+</head>
+<body>
+
+  <header class="site-header header--minimal">
+    <a href="/" class="site-header-name">Ignacio Manzano</a>
+    <nav class="site-header-nav" aria-label="Main navigation">
+      <a href="/wlog" class="site-nav-link">I&#8217;m Writing</a>
+      <a href="/cv"   class="site-nav-link">Life Journey</a>
+    </nav>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Switch to dark mode">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true">
+        <path d="M16,16a4,4,0,0,1,0-8Z" transform="translate(-6 -2)" fill="currentColor"/>
+        <path d="M12,2A10,10,0,1,1,2,12,10,10,0,0,1,12,2Zm0,2V8a4,4,0,0,1,0,8v4A8,8,0,0,1,12,4Z" transform="translate(-2 -2)" fill="currentColor" fill-rule="evenodd"/>
+      </svg>
+    </button>
+  </header>
+
+  <main class="not-found-main">
+
+    <div class="not-found-content">
+      <p class="not-found-code">404: NOT_FOUND</p>
+      <p class="not-found-message">The page you&#8217;re looking for can&#8217;t be found.</p>
+      <p class="not-found-back">Go back to <a href="/">ignacio.info</a></p>
+    </div>
+
+    <div class="game-section">
+      <canvas id="game-canvas" width="560" height="160"></canvas>
+    </div>
+
+  </main>
+
+  <script>
+    /* ── Toggle rotation ── */
+    (function () {
+      var btn = document.getElementById('theme-toggle');
+      if (btn) {
+        btn.addEventListener('click', function () {
+          btn.classList.toggle('is-rotated');
+        });
+      }
+    })();
+
+    /* ── 404 Runner ── */
+    (function () {
+      var canvas = document.getElementById('game-canvas');
+      var ctx    = canvas.getContext('2d');
+      var W = canvas.width;   /* 560 */
+      var H = canvas.height;  /* 160 */
+
+      var GROUND     = 130;
+      var LH         = 13;    /* line-height = font size */
+      var FONT       = LH + 'px "JetBrains Mono", monospace';
+      var SMALL_FONT = '11px "JetBrains Mono", monospace';
+      var GRAVITY    = 0.55;
+      var JUMP_V     = -9;
+      var BASE_SPEED = 3.5;
+
+      /* ── State ── */
+      var state     = 'idle';
+      var score     = 0;
+      var hi        = 0;
+      var speed     = BASE_SPEED;
+      var tick      = 0;
+      var nextSpawn = 120;
+
+      /* ── Player ── */
+      var pl = {
+        x:        70,
+        y:        GROUND - LH * 3,
+        vy:       0,
+        w:        20,
+        h:        LH * 3,
+        grounded: true,
+
+        reset: function () {
+          this.y = GROUND - this.h;
+          this.vy = 0;
+          this.grounded = true;
+        },
+
+        jump: function () {
+          if (this.grounded) {
+            this.vy = JUMP_V;
+            this.grounded = false;
+          }
+        },
+
+        update: function () {
+          this.vy += GRAVITY;
+          this.y  += this.vy;
+          if (this.y + this.h >= GROUND) {
+            this.y = GROUND - this.h;
+            this.vy = 0;
+            this.grounded = true;
+          }
+        },
+
+        draw: function (c) {
+          var run  = Math.floor(tick / 6) % 2 === 0;
+          var head, body, legs;
+
+          if (state === 'dead') {
+            head = '[x]'; body = '_|_'; legs = '   ';
+          } else {
+            head = '[o]';
+            body = '/|\\';
+            legs = this.grounded ? (run ? '/ \\' : '\\ /') : ' | ';
+          }
+
+          ctx.font         = FONT;
+          ctx.fillStyle    = c.char;
+          ctx.textBaseline = 'bottom';
+          ctx.textAlign    = 'left';
+          ctx.fillText(head, this.x, this.y + LH);
+          ctx.fillText(body, this.x, this.y + LH * 2);
+          ctx.fillText(legs, this.x, this.y + LH * 3);
+        }
+      };
+
+      /* ── Obstacles ── */
+      var obs = [];
+
+      function spawn () {
+        var rows = 2 + Math.floor(Math.random() * 3); /* 2–4 rows tall */
+        obs.push({
+          x: W + 10,
+          y: GROUND - rows * LH,
+          w: 9,
+          h: rows * LH
+        });
+        nextSpawn = Math.max(38, 90 - score * 0.04) + Math.random() * 55;
+      }
+
+      /* ── Colors ── */
+      function colors () {
+        var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+        return {
+          bg:     dark ? '#131313' : '#F5F4F1',
+          ground: dark ? '#2A2A2A' : '#D2D2D2',
+          char:   dark ? '#F5F4F1' : '#131313',
+          obs:    '#3047B6',
+          muted:  '#8B867E'
+        };
+      }
+
+      /* ── Collision ── */
+      function hit (o) {
+        var inset = 3;
+        return (pl.x + inset)          < (o.x + o.w) &&
+               (pl.x + pl.w - inset)   > o.x          &&
+               pl.y                    < (o.y + o.h)  &&
+               (pl.y + pl.h)           > o.y;
+      }
+
+      /* ── Input ── */
+      function input () {
+        if (state === 'idle') {
+          state = 'playing';
+          return;
+        }
+        if (state === 'dead') {
+          if (score > hi) hi = score;
+          obs       = [];
+          score     = 0;
+          speed     = BASE_SPEED;
+          tick      = 0;
+          nextSpawn = 120;
+          pl.reset();
+          state = 'playing';
+          return;
+        }
+        pl.jump();
+      }
+
+      document.addEventListener('keydown', function (e) {
+        if (e.code === 'Space') { e.preventDefault(); input(); }
+      });
+      canvas.addEventListener('click', input);
+      canvas.addEventListener('touchstart', function (e) {
+        e.preventDefault(); input();
+      }, { passive: false });
+
+      /* ── Draw helpers ── */
+      function drawGround (c) {
+        ctx.strokeStyle = c.ground;
+        ctx.lineWidth   = 1;
+        ctx.beginPath();
+        ctx.moveTo(0, GROUND);
+        ctx.lineTo(W, GROUND);
+        ctx.stroke();
+      }
+
+      function drawScore (c) {
+        var hiStr = 'HI ' + pad(hi);
+        var scStr = pad(score);
+        ctx.font         = SMALL_FONT;
+        ctx.fillStyle    = c.muted;
+        ctx.textAlign    = 'right';
+        ctx.textBaseline = 'top';
+        ctx.fillText(hiStr + '  ' + scStr, W - 8, 8);
+      }
+
+      function drawObs (c) {
+        ctx.font         = FONT;
+        ctx.fillStyle    = c.obs;
+        ctx.textBaseline = 'bottom';
+        ctx.textAlign    = 'left';
+        obs.forEach(function (o) {
+          var rows = Math.round(o.h / LH);
+          for (var i = 0; i < rows; i++) {
+            ctx.fillText('#', o.x, GROUND - i * LH);
+          }
+        });
+      }
+
+      function drawMsg (c, msg) {
+        ctx.font         = SMALL_FONT;
+        ctx.fillStyle    = c.muted;
+        ctx.textAlign    = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(msg, W / 2, GROUND - 54);
+      }
+
+      function pad (n) {
+        return String(Math.floor(n)).padStart(5, '0');
+      }
+
+      /* ── Loop ── */
+      function loop () {
+        requestAnimationFrame(loop);
+        var c = colors();
+
+        ctx.fillStyle = c.bg;
+        ctx.fillRect(0, 0, W, H);
+
+        drawGround(c);
+        drawScore(c);
+
+        if (state === 'playing') {
+          tick++;
+          score += 0.12;
+          speed  = BASE_SPEED + Math.floor(score / 100) * 0.35;
+
+          if (--nextSpawn <= 0) spawn();
+
+          obs = obs.filter(function (o) {
+            o.x -= speed;
+            return o.x + o.w > 0;
+          });
+
+          pl.update();
+
+          for (var i = 0; i < obs.length; i++) {
+            if (hit(obs[i])) { state = 'dead'; break; }
+          }
+        }
+
+        drawObs(c);
+        pl.draw(c);
+
+        if (state === 'idle') {
+          drawMsg(c, 'press SPACE or click to play');
+        } else if (state === 'dead') {
+          drawMsg(c, 'GAME OVER  —  press SPACE or click to restart');
+        }
+      }
+
+      loop();
+    })();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Life Journey | Ignacio Manzano</title>
+  <meta name="description" content="Background, experience, and life journey of Ignacio Manzano.">
+
+  <!-- Favicons -->
+  <link rel="icon" href="/assets/icons/favicon.ico" sizes="any">
+  <link rel="icon" href="/assets/icons/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/assets/icons/favicon-180.png">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Life Journey | Ignacio Manzano">
+  <meta property="og:description" content="Background, experience, and life journey of Ignacio Manzano.">
+  <meta property="og:image" content="/assets/img/og-cv.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ignacio.info/cv">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Life Journey | Ignacio Manzano">
+  <meta name="twitter:image" content="/assets/img/og-cv.jpg">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/css/design-system.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/cv.css">
+
+  <!-- Apply theme before first paint — prevents flash -->
+  <script>
+    (function(){
+      var s=localStorage.getItem('ignacio-info-theme');
+      var t=s==='dark'||s==='light'?s:(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
+      document.documentElement.setAttribute('data-theme',t);
+    })();
+  </script>
+  <script src="/assets/js/theme-toggle.js" defer></script>
+</head>
+<body>
+
+  <header class="site-header header--cv">
+    <a href="/" class="site-header-name">Ignacio Manzano</a>
+    <nav class="site-header-nav" aria-label="Main navigation">
+      <a href="/wlog" class="site-nav-link">I&#8217;m Writing</a>
+      <a href="/cv"   class="site-nav-link site-nav-link--active">Life Journey</a>
+    </nav>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Switch to dark mode">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true">
+        <path d="M16,16a4,4,0,0,1,0-8Z" transform="translate(-6 -2)" fill="currentColor"/>
+        <path d="M12,2A10,10,0,1,1,2,12,10,10,0,0,1,12,2Zm0,2V8a4,4,0,0,1,0,8v4A8,8,0,0,1,12,4Z" transform="translate(-2 -2)" fill="currentColor" fill-rule="evenodd"/>
+      </svg>
+    </button>
+  </header>
+
+  <main class="cv-main">
+
+    <!-- ════════════════════════ LEFT — ABOUT ME ════════════════════════ -->
+    <aside class="cv-left">
+
+      <!-- ASCII portrait iframes -->
+      <div class="cv-ascii-wrap">
+        <iframe src="/assets/ascii-light.html" class="cv-ascii-frame cv-ascii-frame--light"
+                scrolling="no" frameborder="0" title="Portrait"></iframe>
+        <iframe src="/assets/ascii-dark.html"  class="cv-ascii-frame cv-ascii-frame--dark"
+                scrolling="no" frameborder="0" title="Portrait"></iframe>
+      </div>
+
+      <!-- Name -->
+      <h1 class="cv-name">Ignacio Manzano</h1>
+
+      <!-- Bio -->
+      <div class="cv-bio">
+        <p>Background in business strategy, operations, marketing and institutional relations across Spain, the United States, and Puerto Rico.</p>
+        <p>Certified in AI Ethics &amp; Regulatory Audit and AI Project Management &amp; Adoption. Currently completing a Master in AI for Business Management at Esden Business School.</p>
+      </div>
+
+      <!-- Action buttons -->
+      <div class="cv-buttons">
+        <a href="https://linkedin.com/in/ignacio-manzano" target="_blank" rel="noopener noreferrer" class="cv-btn cv-btn--linkedin">
+          LinkedIn
+          <img src="/assets/svg/icon-arrow.svg" class="cv-btn-icon cv-btn-icon--arrow" alt="" width="10" height="10">
+        </a>
+        <a href="mailto:ignacio@manzano.cc" class="cv-btn cv-btn--email">
+          Send Email
+          <img src="/assets/svg/icon-arrow.svg" class="cv-btn-icon cv-btn-icon--arrow" alt="" width="10" height="10">
+        </a>
+        <button type="button" class="cv-btn cv-btn--copy" id="copy-email-btn">
+          <span id="copy-email-label">Copy Email</span>
+          <img src="/assets/svg/icon-copy.svg" class="cv-btn-icon cv-btn-icon--copy" alt="" width="14" height="14">
+        </button>
+      </div>
+
+    </aside>
+
+    <!-- ════════════════════════ RIGHT — TIMELINE ════════════════════════ -->
+    <section class="cv-right">
+
+      <p class="cv-section-label">LIFE JOURNEY</p>
+
+      <div class="cv-timeline">
+
+        <!-- ─── 2027 ─── -->
+        <div class="cv-year">2027</div>
+
+        <!-- Esden: AI Ethics Certification -->
+        <div class="cv-bubble" data-bubble="esden-ethics">
+          <button class="cv-bubble-close" aria-label="Close">&#x2715;</button>
+          <div class="cv-bubble-head">
+            <img src="/assets/svg/logo-esden.svg" class="cv-bubble-logo" alt="Esden Business School" width="40" height="40">
+            <div class="cv-bubble-meta">
+              <div class="cv-bubble-org-line">
+                <span class="cv-bubble-org">Esden Business School</span>
+                <span class="cv-bubble-sep">|</span>
+                <span class="cv-bubble-loc">Madrid, Spain</span>
+              </div>
+              <div class="cv-bubble-info-line">
+                <span class="cv-bubble-dates">MAY 26 &#8211; JUN 26</span>
+                <span class="cv-bubble-role">Certification in Ethical and Regulatory AI Auditing</span>
+              </div>
+            </div>
+          </div>
+          <div class="cv-bubble-body">
+            <div class="cv-bubble-body-inner">
+              <ul class="cv-bubble-highlights">
+                <li>EU AI Act: risk-level classification, high-risk system requirements, and implementation timeline.</li>
+                <li>International standards: ISO/IEC 42001, ISO/IEC 23894, and NIST AI Risk Management Framework.</li>
+                <li>Audit methodology: 4-phase process (planning, execution, reporting, and continuous improvement).</li>
+                <li>Audit areas: data (quality, bias, lineage), model (fairness, explainability, robustness), and governance.</li>
+                <li>Fundamental rights impact assessment and MLOps operations audit.</li>
+                <li>Practical tools: comprehensive checklist, audit report template, and maturity assessment matrix.</li>
+                <li>Sector application: finance, healthcare, HR, and public administration.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Esden: AI Project Management Certification -->
+        <div class="cv-bubble" data-bubble="esden-pm">
+          <button class="cv-bubble-close" aria-label="Close">&#x2715;</button>
+          <div class="cv-bubble-head">
+            <img src="/assets/svg/logo-esden.svg" class="cv-bubble-logo" alt="Esden Business School" width="40" height="40">
+            <div class="cv-bubble-meta">
+              <div class="cv-bubble-org-line">
+                <span class="cv-bubble-org">Esden Business School</span>
+                <span class="cv-bubble-sep">|</span>
+                <span class="cv-bubble-loc">Madrid, Spain</span>
+              </div>
+              <div class="cv-bubble-info-line">
+                <span class="cv-bubble-dates">MAY 26 &#8211; JUN 26</span>
+                <span class="cv-bubble-role">Certification in Project Management for AI Integration and Adoption</span>
+              </div>
+            </div>
+          </div>
+          <div class="cv-bubble-body">
+            <div class="cv-bubble-body-inner">
+              <ul class="cv-bubble-highlights">
+                <li>PM methodologies: PMBOK 7, Agile (Scrum &amp; Kanban), PRINCE2, and hybrid models applied to AI projects.</li>
+                <li>AI project lifecycle: 6-phase cycle from readiness assessment to continuous improvement.</li>
+                <li>Risk management: taxonomy covering data, technical, ethical, and organizational risks.</li>
+                <li>Ethical &amp; regulatory governance: EU AI Act implications and ethics integration across the project lifecycle.</li>
+                <li>Stakeholder &amp; change management: stakeholder mapping, resistance strategies, and change agent networks.</li>
+                <li>KPIs &amp; success metrics: technical, business, adoption, and fairness metrics with integrated scorecard.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Esden: Master -->
+        <div class="cv-bubble" data-bubble="esden-master">
+          <button class="cv-bubble-close" aria-label="Close">&#x2715;</button>
+          <div class="cv-bubble-head">
+            <img src="/assets/svg/logo-esden.svg" class="cv-bubble-logo" alt="Esden Business School" width="40" height="40">
+            <div class="cv-bubble-meta">
+              <div class="cv-bubble-org-line">
+                <span class="cv-bubble-org">Esden Business School</span>
+                <span class="cv-bubble-sep">|</span>
+                <span class="cv-bubble-loc">Madrid, Spain</span>
+              </div>
+              <div class="cv-bubble-info-line">
+                <span class="cv-bubble-dates">MAR 26 &#8211; FEB 27</span>
+                <span class="cv-bubble-role">Master in AI for Business Management</span>
+              </div>
+            </div>
+          </div>
+          <div class="cv-bubble-body">
+            <div class="cv-bubble-body-inner">
+              <ul class="cv-bubble-highlights">
+                <li>AI fundamentals &amp; generative AI: business applications, AI agents, and content generation (text, image, audio, video).</li>
+                <li>Low-code &amp; advanced automation: Zapier, Make, Power Automate, and n8n for business process automation.</li>
+                <li>Data-driven decision making: data governance, complex integrations, and Looker Studio for business analytics.</li>
+                <li>AI project management: digital transformation, change management, and ROI measurement for AI initiatives.</li>
+                <li>Strategic AI leadership: market analysis, business model optimization, and future scenarios simulation.</li>
+                <li>AI in Finance &amp; HR: automated financial analysis, risk prediction, talent acquisition, and performance management.</li>
+                <li>Commercial &amp; marketing AI: customer segmentation, personalized campaigns, sentiment analysis, and predictive marketing.</li>
+                <li>AI &amp; cybersecurity: risk management, incident response, and AI ethics in security contexts.</li>
+                <li>Regulation &amp; future challenges: EU AI Act, AI ethics, sustainability, and emerging trends.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Milestone: AIGEA.ORG -->
+        <div class="cv-milestone">
+          <span class="cv-dot">&#183;</span>
+          <span class="cv-milestone-text">FOUNDED <a href="https://aigea.org" target="_blank" rel="noopener noreferrer" class="cv-milestone-link">AIGEA.ORG</a></span>
+        </div>
+
+        <!-- ─── 2026 ─── -->
+        <div class="cv-year">2026</div>
+
+        <!-- Milestone: MANZANO.CC -->
+        <div class="cv-milestone">
+          <span class="cv-dot">&#183;</span>
+          <span class="cv-milestone-text">CREATED <a href="https://manzano.cc" target="_blank" rel="noopener noreferrer" class="cv-milestone-link">MANZANO.CC</a></span>
+        </div>
+
+        <!-- Milestone: PR Dept. of State 2025 — expandable -->
+        <div class="cv-milestone cv-milestone--exp" data-milestone="pr-2025">
+          <div class="cv-milestone-head">
+            <span class="cv-dot">&#183;</span>
+            <span class="cv-milestone-text">SELECTED BY THE PR DEPARTMENT OF STATE <span class="cv-milestone-year">(2025)</span></span>
+          </div>
+          <div class="cv-milestone-body">
+            <div class="cv-milestone-body-inner">
+              <button class="cv-milestone-close" aria-label="Close">&#x2715;</button>
+              <p>Official Representative of Spain at government receptions, collaborating directly with the Hon. Rosachely Rivera Santana, Secretary of State of Puerto Rico, on bilateral exchange programs.</p>
+              <button type="button" class="cv-see-pics" data-img="/assets/img/dest-pr-2025.webp">SEE PICTURES</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ─── 2025 ─── -->
+        <div class="cv-year">2025</div>
+
+        <!-- Ethree Solutions -->
+        <div class="cv-bubble" data-bubble="ethree">
+          <button class="cv-bubble-close" aria-label="Close">&#x2715;</button>
+          <div class="cv-bubble-head">
+            <img src="/assets/svg/logo-ethree-solutions.svg" class="cv-bubble-logo" alt="Ethree Solutions" width="40" height="40">
+            <div class="cv-bubble-meta">
+              <div class="cv-bubble-org-line">
+                <span class="cv-bubble-org">Ethree Solutions</span>
+                <span class="cv-bubble-sep">|</span>
+                <span class="cv-bubble-loc">San Juan, Puerto Rico</span>
+              </div>
+              <div class="cv-bubble-info-line">
+                <span class="cv-bubble-dates">AUG 23 &#8211; NOV 25</span>
+                <span class="cv-bubble-role">Intern Analyst</span>
+              </div>
+            </div>
+          </div>
+          <div class="cv-bubble-body">
+            <div class="cv-bubble-body-inner">
+              <ul class="cv-bubble-highlights">
+                <li>Supported senior leadership and directors across strategic and business development initiatives.</li>
+                <li>Contributed to market expansion efforts into new international markets, supporting go-to-market strategy.</li>
+                <li>Built and maintained relationships with government bodies, the Chamber of Commerce, and the Spanish Economic and Commercial Office in Puerto Rico.</li>
+                <li>Involved in the design and launch of the company&#8217;s new office space and rebranding process.</li>
+                <li>Assisted in the preparation of client proposals and supported business development activities.</li>
+                <li>Participated in networking events, trade shows, and institutional meetings.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Milestone: PR Dept. of State 2023 — expandable -->
+        <div class="cv-milestone cv-milestone--exp" data-milestone="pr-2023">
+          <div class="cv-milestone-head">
+            <span class="cv-dot">&#183;</span>
+            <span class="cv-milestone-text">SELECTED BY THE PR DEPARTMENT OF STATE <span class="cv-milestone-year">(2023)</span></span>
+          </div>
+          <div class="cv-milestone-body">
+            <div class="cv-milestone-body-inner">
+              <button class="cv-milestone-close" aria-label="Close">&#x2715;</button>
+              <p>Official Representative of Spain at government receptions, collaborating directly with the Hon. Omar Marrero D&#237;az, Secretary of State of Puerto Rico, on bilateral exchange programs.</p>
+              <button type="button" class="cv-see-pics" data-img="/assets/img/dest-pr-2023.webp">SEE PICTURES</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ─── 2023 ─── -->
+        <div class="cv-year">2023</div>
+
+        <!-- Sagrado Corazón University -->
+        <div class="cv-bubble" data-bubble="sagrado">
+          <button class="cv-bubble-close" aria-label="Close">&#x2715;</button>
+          <div class="cv-bubble-head">
+            <img src="/assets/svg/logo-sagrado-corazon.svg" class="cv-bubble-logo" alt="Sagrado Coraz&#243;n University" width="40" height="40">
+            <div class="cv-bubble-meta">
+              <div class="cv-bubble-org-line">
+                <span class="cv-bubble-org">Sagrado Coraz&#243;n University</span>
+                <span class="cv-bubble-sep">|</span>
+                <span class="cv-bubble-loc">Puerto Rico</span>
+              </div>
+              <div class="cv-bubble-info-line">
+                <span class="cv-bubble-dates">AUG 22 &#8211; DEC 22</span>
+                <span class="cv-bubble-role">Business Administration (Exchange Semester)</span>
+              </div>
+            </div>
+          </div>
+          <div class="cv-bubble-body">
+            <div class="cv-bubble-body-inner">
+              <ul class="cv-bubble-highlights">
+                <li>Business Administration core curriculum at Universidad del Sagrado Coraz&#243;n, San Juan, Puerto Rico.</li>
+                <li>Marketing &amp; brand strategy: Branding and Social Media Management.</li>
+                <li>Data &amp; analytics: Marketing Analytics applied to real business contexts.</li>
+                <li>Entrepreneurship: Creative Entrepreneurship with a practical, innovation-driven approach.</li>
+                <li>Social &amp; cultural context: Social Analysis in a bilingual, multicultural environment.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- ─── 2022 ─── -->
+        <div class="cv-year">2022</div>
+
+        <!-- Esic: Speaker & Staff -->
+        <div class="cv-bubble" data-bubble="esic-speaker">
+          <button class="cv-bubble-close" aria-label="Close">&#x2715;</button>
+          <div class="cv-bubble-head">
+            <img src="/assets/svg/logo-esic.svg" class="cv-bubble-logo" alt="Esic University" width="40" height="40">
+            <div class="cv-bubble-meta">
+              <div class="cv-bubble-org-line">
+                <span class="cv-bubble-org">Esic University</span>
+                <span class="cv-bubble-sep">|</span>
+                <span class="cv-bubble-loc">Madrid, Spain</span>
+              </div>
+              <div class="cv-bubble-info-line">
+                <span class="cv-bubble-dates">MAY 21 &#8211; MAY 23</span>
+                <span class="cv-bubble-role">Events Staff Coordinator &amp; Speaker</span>
+              </div>
+            </div>
+          </div>
+          <div class="cv-bubble-body">
+            <div class="cv-bubble-body-inner">
+              <ul class="cv-bubble-highlights">
+                <li>Started as event staff and became the go-to coordinator for events, managing and directing staff teams across 50+ events.</li>
+                <li>Selected as speaker and moderator for Generaci&#243;n ESIC 2022, a large-scale university event featuring top Spanish companies including Spotify and VICIO.</li>
+              </ul>
+              <button type="button" class="cv-see-pics" data-imgs='["/assets/img/esic-gs-1.webp","/assets/img/esic-gs-2.webp","/assets/img/esic-gs-3.webp"]'>SEE PICTURES</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ─── 2021 ─── -->
+        <div class="cv-year">2021</div>
+
+        <!-- Milestone: Instagram — expandable -->
+        <div class="cv-milestone cv-milestone--exp" data-milestone="instagram">
+          <div class="cv-milestone-head">
+            <span class="cv-dot">&#183;</span>
+            <span class="cv-milestone-text">INSTAGRAM &#8212; 1.449B IMPRESSIONS</span>
+          </div>
+          <div class="cv-milestone-body">
+            <div class="cv-milestone-body-inner">
+              <button class="cv-milestone-close" aria-label="Close">&#x2715;</button>
+              <p>Over 20 AR Filters (nmFilters) created and published on Instagram, reached over 1.4 billion impressions organically before being deactivated by the platform (SparkAR).</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ─── 2020 ─── -->
+        <div class="cv-year">2020</div>
+
+        <!-- Esic: Degree Marketing Global Management -->
+        <div class="cv-bubble" data-bubble="esic-degree">
+          <button class="cv-bubble-close" aria-label="Close">&#x2715;</button>
+          <div class="cv-bubble-head">
+            <img src="/assets/svg/logo-esic.svg" class="cv-bubble-logo" alt="Esic University" width="40" height="40">
+            <div class="cv-bubble-meta">
+              <div class="cv-bubble-org-line">
+                <span class="cv-bubble-org">Esic University</span>
+                <span class="cv-bubble-sep">|</span>
+                <span class="cv-bubble-loc">Madrid, Spain</span>
+              </div>
+              <div class="cv-bubble-info-line">
+                <span class="cv-bubble-dates">SEP 19 &#8211; JUN 25</span>
+                <span class="cv-bubble-role">Marketing Global Management</span>
+              </div>
+            </div>
+          </div>
+          <div class="cv-bubble-body">
+            <div class="cv-bubble-body-inner">
+              <ul class="cv-bubble-highlights">
+                <li>Marketing strategy &amp; management: Marketing Direction, Digital Marketing Strategies, Data Driven Marketing, and Marketing Intelligence.</li>
+                <li>Commercial &amp; sales: Sales Direction, Trade &amp; Retail Marketing, Pricing, and Sales Forecasting &#8212; Honours grade.</li>
+                <li>Digital &amp; analytics: Digital Marketing Metrics &amp; Analytics, Business Analytics, Market Research, and Trend Analysis.</li>
+                <li>Brand &amp; communication: Branding, Markcom, Corporate Communication (Dircom), and Multimedia.</li>
+                <li>Business &amp; strategy: Business Strategy, Corporate Ethics &amp; CSR, Decision Making, and Legal Framework.</li>
+                <li>Entrepreneurship &amp; innovation: Creative Development, Business Innovation &amp; Entrepreneurship, and Change &amp; Transformation.</li>
+                <li>Global mindset: International exchange semester (Puerto Rico), Glocal Marketing, and Mandarin Chinese (advanced level, assigned due to C2+ English proficiency).</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Milestone: Graduated High School -->
+        <div class="cv-milestone">
+          <span class="cv-dot">&#183;</span>
+          <span class="cv-milestone-text">GRADUATED &#8212; HIGH SCHOOL</span>
+        </div>
+
+        <!-- ─── 2019 ─── -->
+        <div class="cv-year">2019</div>
+
+        <!-- Exchange Student Year in the U.S.A. -->
+        <div class="cv-bubble" data-bubble="exchange-usa">
+          <button class="cv-bubble-close" aria-label="Close">&#x2715;</button>
+          <div class="cv-bubble-head">
+            <img src="/assets/svg/flag-usa.svg" class="cv-bubble-logo" alt="United States" width="40" height="40">
+            <div class="cv-bubble-meta">
+              <div class="cv-bubble-org-line">
+                <span class="cv-bubble-org">Exchange Student Year in the U.S.A.</span>
+                <span class="cv-bubble-sep">|</span>
+                <span class="cv-bubble-loc">Mississippi, United States of America</span>
+              </div>
+              <div class="cv-bubble-info-line">
+                <span class="cv-bubble-dates">AUG 16 &#8211; MAY 17</span>
+                <span class="cv-bubble-role">Academic Year Abroad</span>
+              </div>
+            </div>
+          </div>
+          <div class="cv-bubble-body">
+            <div class="cv-bubble-body-inner">
+              <ul class="cv-bubble-highlights">
+                <li>Academic year abroad &#8212; 11th grade.</li>
+                <li>GPA 3.9 across all coursework completed.</li>
+                <li>Soccer team member.</li>
+                <li>Part of FCA (Fellowship of Christian Athletes).</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- ─── 2016 ─── -->
+        <div class="cv-year">2016</div>
+
+        <!-- Milestone: First Website -->
+        <div class="cv-milestone">
+          <span class="cv-dot">&#183;</span>
+          <span class="cv-milestone-text">PUBLISHED MY FIRST WEBSITE</span>
+        </div>
+
+        <!-- ─── 2014 ─── -->
+        <div class="cv-year">2014</div>
+
+      </div><!-- /.cv-timeline -->
+
+    </section>
+
+  </main>
+
+  <!-- ── Image lightbox ── -->
+  <div class="cv-lightbox" id="cv-lightbox" aria-hidden="true">
+    <div class="cv-lightbox-overlay" id="cv-lightbox-overlay"></div>
+    <button class="cv-lightbox-close" id="cv-lightbox-close" aria-label="Close">&#x2715;</button>
+    <button class="cv-lightbox-prev" id="cv-lightbox-prev" aria-label="Previous">&#8249;</button>
+    <img class="cv-lightbox-img" id="cv-lightbox-img" src="" alt="Photo">
+    <button class="cv-lightbox-next" id="cv-lightbox-next" aria-label="Next">&#8250;</button>
+    <div class="cv-lightbox-counter" id="cv-lightbox-counter"></div>
+  </div>
+
+  <footer class="cv-footer">
+    <a href="/" class="cv-footer-back">Go back to home page</a>
+  </footer>
+
+  <script>
+    /* ── Toggle rotation ── */
+    (function () {
+      var btn = document.getElementById('theme-toggle');
+      if (btn) {
+        btn.addEventListener('click', function () {
+          btn.classList.toggle('is-rotated');
+        });
+      }
+    })();
+
+    /* ── Copy Email ── */
+    (function () {
+      var btn = document.getElementById('copy-email-btn');
+      var lbl = document.getElementById('copy-email-label');
+      if (!btn) return;
+      btn.addEventListener('click', function () {
+        navigator.clipboard.writeText('ignacio@manzano.cc').then(function () {
+          lbl.textContent = 'Copied!';
+          setTimeout(function () { lbl.textContent = 'Copy Email'; }, 2000);
+        });
+      });
+    })();
+
+    /* ── Bubbles ── */
+    (function () {
+      var bubbles = document.querySelectorAll('.cv-bubble');
+
+      function closeAll() {
+        bubbles.forEach(function (b) { b.classList.remove('is-open'); });
+      }
+
+      bubbles.forEach(function (bubble) {
+        var head  = bubble.querySelector('.cv-bubble-head');
+        var close = bubble.querySelector('.cv-bubble-close');
+
+        head.addEventListener('click', function () {
+          var wasOpen = bubble.classList.contains('is-open');
+          closeAll();
+          if (!wasOpen) bubble.classList.add('is-open');
+        });
+
+        close.addEventListener('click', function (e) {
+          e.stopPropagation();
+          bubble.classList.remove('is-open');
+        });
+      });
+    })();
+
+    /* ── Expandable milestones ── */
+    (function () {
+      var milestones = document.querySelectorAll('.cv-milestone--exp');
+
+      function closeAllMs() {
+        milestones.forEach(function (m) { m.classList.remove('is-open'); });
+      }
+
+      milestones.forEach(function (ms) {
+        var head  = ms.querySelector('.cv-milestone-head');
+        var close = ms.querySelector('.cv-milestone-close');
+
+        head.addEventListener('click', function () {
+          var wasOpen = ms.classList.contains('is-open');
+          closeAllMs();
+          if (!wasOpen) ms.classList.add('is-open');
+        });
+
+        if (close) {
+          close.addEventListener('click', function (e) {
+            e.stopPropagation();
+            ms.classList.remove('is-open');
+          });
+        }
+      });
+    })();
+
+    /* ── Image lightbox ── */
+    (function () {
+      var box      = document.getElementById('cv-lightbox');
+      var overlay  = document.getElementById('cv-lightbox-overlay');
+      var closeBtn = document.getElementById('cv-lightbox-close');
+      var prevBtn  = document.getElementById('cv-lightbox-prev');
+      var nextBtn  = document.getElementById('cv-lightbox-next');
+      var img      = document.getElementById('cv-lightbox-img');
+      var counter  = document.getElementById('cv-lightbox-counter');
+
+      var gallery = [];
+      var current = 0;
+
+      function show(index) {
+        current = index;
+        img.src = gallery[index];
+        if (gallery.length > 1) {
+          counter.textContent = (index + 1) + ' / ' + gallery.length;
+          prevBtn.style.display = index > 0 ? 'flex' : 'none';
+          nextBtn.style.display = index < gallery.length - 1 ? 'flex' : 'none';
+        } else {
+          counter.textContent = '';
+          prevBtn.style.display = 'none';
+          nextBtn.style.display = 'none';
+        }
+      }
+
+      function open(images) {
+        gallery = images;
+        show(0);
+        box.classList.add('is-visible');
+        box.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function close() {
+        box.classList.remove('is-visible');
+        box.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        img.src = '';
+        gallery = [];
+      }
+
+      document.querySelectorAll('.cv-see-pics').forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          var multi  = btn.dataset.imgs;
+          var single = btn.dataset.img;
+          open(multi ? JSON.parse(multi) : [single]);
+        });
+      });
+
+      overlay.addEventListener('click', close);
+      closeBtn.addEventListener('click', close);
+      prevBtn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        if (current > 0) show(current - 1);
+      });
+      nextBtn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        if (current < gallery.length - 1) show(current + 1);
+      });
+      document.addEventListener('keydown', function (e) {
+        if (!box.classList.contains('is-visible')) return;
+        if (e.key === 'Escape') close();
+        if (e.key === 'ArrowLeft'  && current > 0)                    show(current - 1);
+        if (e.key === 'ArrowRight' && current < gallery.length - 1)   show(current + 1);
+      });
+    })();
+  </script>
+
+</body>
+</html>

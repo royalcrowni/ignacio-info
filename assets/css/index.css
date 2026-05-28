@@ -1,0 +1,249 @@
+/* ============================================================
+   PAGE SHELL
+   ============================================================ */
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+}
+
+/* ============================================================
+   THEME TOGGLE
+   ============================================================ */
+.theme-toggle {
+  width: 1.75rem;
+  height: 1.75rem;
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--color-text-secondary);
+  transition:
+    background-color var(--transition-base),
+    border-color var(--transition-base),
+    color var(--transition-fast);
+}
+
+.theme-toggle:hover {
+  background-color: var(--color-lifeos-bg);
+  border-color: var(--color-lifeos-border);
+  color: var(--color-title);
+  transform: scale(1.05);
+}
+
+.theme-toggle:active {
+  transform: scale(0.93);
+}
+
+.theme-toggle svg {
+  transition: transform 320ms ease;
+}
+
+.theme-toggle.is-rotated svg {
+  transform: rotate(180deg);
+}
+
+/* ============================================================
+   MAIN — content slightly above vertical center
+   ============================================================ */
+.page-main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-6);
+}
+
+/* ============================================================
+   HOME CONTENT BLOCK
+   ============================================================ */
+.home-content {
+  width: 100%;
+  max-width: 490px;
+  margin-bottom: 5vh;  /* shifts visually just above center */
+}
+
+/* Title */
+.home-title {
+  font-family:    var(--font-sans);
+  font-size:      var(--text-xl);
+  font-weight:    var(--weight-medium);
+  line-height:    var(--leading-snug);
+  letter-spacing: var(--tracking-tight);
+  color:          var(--color-title);
+  margin-bottom:  var(--space-2);
+}
+
+/* "Currently in Madrid  ☀ 09:55AM" row */
+.home-meta {
+  display:       flex;
+  align-items:   center;
+  gap:           var(--space-2);
+  font-size:     var(--text-xs);
+  color:         var(--color-text-secondary);
+  margin-bottom: 0;
+}
+
+.home-location {
+  white-space: nowrap;
+}
+
+.home-clock-wrap {
+  display:       inline-flex;
+  align-items:   center;
+  gap:           var(--space-1);
+  background:    var(--color-bg-clock);
+  border-radius: var(--radius-full);
+  padding:       2px var(--space-2);
+  transition:    background-color var(--transition-theme);
+}
+
+.time-icon {
+  width:       12px;
+  height:      12px;
+  flex-shrink: 0;
+}
+
+.home-clock {
+  font-family:    var(--font-mono);
+  font-size:      var(--text-xs);
+  font-weight:    var(--weight-regular);
+  color:          var(--color-text-secondary);
+  letter-spacing: var(--tracking-wide);
+  line-height:    1;
+}
+
+/* "Past in Puerto Rico & USA" — smaller, closer to meta, text color */
+.home-origin {
+  font-size:     0.65rem;
+  font-style:    italic;
+  color:         var(--color-text);
+  margin-top:    var(--space-1);
+  margin-bottom: var(--space-5);
+  line-height:   var(--leading-normal);
+}
+
+/* ============================================================
+   BIO PARAGRAPHS
+   ============================================================ */
+.home-bio {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--space-3);
+}
+
+.home-bio p {
+  font-size:   var(--text-sm);
+  line-height: var(--leading-normal);
+  color:       var(--color-text);
+}
+
+/* ============================================================
+   LINKS
+   ============================================================ */
+
+/* manzano.cc — bold italic mono */
+.link-mono {
+  font-family:           var(--font-mono);
+  font-weight:           700;
+  font-style:            italic;
+  font-size:             0.92em;
+  color:                 #6E6961;
+  text-decoration:       underline;
+  text-underline-offset: 3px;
+  text-decoration-color: #6E6961;
+  vertical-align:        baseline;
+  transition: color var(--transition-fast),
+              text-decoration-color var(--transition-fast);
+}
+
+.link-mono:hover {
+  color:                 var(--color-text);
+  text-decoration-color: var(--color-text);
+}
+
+/* Internal bio links — letter-by-letter color wave */
+@keyframes letter-wave {
+  0%   { color: var(--color-blue-primary); }
+  33%  { color: var(--color-blue-mid); }
+  66%  { color: var(--color-blue-light); }
+  100% { color: var(--color-blue-primary); }
+}
+
+.link-bio {
+  font-family:           var(--font-sans);
+  font-weight:           var(--weight-medium);
+  text-decoration:       underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--color-blue-light);
+  color:                 var(--color-blue-primary); /* fallback before JS runs */
+}
+
+.link-bio span {
+  animation: letter-wave 2s linear infinite;
+}
+
+/* AIGEA inline link */
+.link-aigea {
+  font-family:           var(--font-mono);
+  font-weight:           700;
+  font-style:            italic;
+  font-size:             0.92em;
+  color:                 #6E6961;
+  text-decoration:       underline;
+  text-underline-offset: 3px;
+  text-decoration-color: #6E6961;
+  transition: color var(--transition-fast),
+              text-decoration-color var(--transition-fast);
+}
+
+.link-aigea:hover {
+  color:                 var(--color-text);
+  text-decoration-color: var(--color-text);
+}
+
+/* ============================================================
+   SOCIAL LINKS (inline, after bio)
+   ============================================================ */
+.home-social {
+  display:    flex;
+  gap:        var(--space-6);
+  margin-top: var(--space-8);
+}
+
+.social-link {
+  font-size:             var(--text-xs);
+  color:                 var(--color-text-secondary);
+  text-decoration:       underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--color-text-secondary);
+  transition: color var(--transition-fast),
+              text-decoration-color var(--transition-fast);
+}
+
+.social-link:hover {
+  color:                 var(--color-text);
+  text-decoration-color: var(--color-text);
+}
+
+/* ============================================================
+   RESPONSIVE — MOBILE
+   ============================================================ */
+@media (max-width: 640px) {
+  .page-main {
+    align-items:   center;
+    padding-left:  var(--space-5);
+    padding-right: var(--space-5);
+  }
+
+  .home-content {
+    margin-bottom: 0;
+    margin-top:    6vh; /* ligeramente por debajo del centro */
+  }
+
+  .footer-nav {
+    gap: var(--space-12);
+  }
+}
