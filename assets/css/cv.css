@@ -222,6 +222,11 @@ body {
 }
 
 /* ── Expandable milestones ── */
+.cv-milestone--exp .cv-milestone-text {
+  text-decoration:       underline;
+  text-underline-offset: 3px;
+}
+
 .cv-milestone--exp {
   flex-direction: column;
   align-items:    stretch;
